@@ -33,7 +33,7 @@ namespace _2D_Map
         static void Main(string[] args)
         {
 
-            DisplayMap();
+            DisplayMap(1);
            
 
             Console.ReadKey(true);
@@ -56,7 +56,23 @@ namespace _2D_Map
 
         static void DisplayMap(int scale)
         {
+            for (int y = 0; y <= 11; y++)
+            {
+                for(int scaleY = 0; scaleY < scale; scaleY++)
+                {
+                   for (int x = 0; x <= 29; x++)
+                   {
+                       for(int scaleX = 0; scaleX < scale; scaleX++)
+                       {
 
+                         Console.Write(map[y, x]);
+                            
+                       }
+                        
+                   }
+                    Console.WriteLine();
+                }      
+            } 
         }
     }
 }
