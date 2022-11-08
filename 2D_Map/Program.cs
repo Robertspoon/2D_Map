@@ -23,6 +23,7 @@ namespace _2D_Map
             {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
             {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         };
+        
 
         // map legend:
         // ^ = mountain
@@ -31,13 +32,25 @@ namespace _2D_Map
         // * = trees
         static void Main(string[] args)
         {
-            Console.WriteLine("2D Map");
+
+            DisplayMap();
+           
 
             Console.ReadKey(true);
         }
 
         static void DisplayMap()
         {
+            for (int y = 0; y<= 11; y++)
+            {
+               
+                for(int x = 0; x<= 29; x++)
+                {
+                    Console.Write(map[y,x]);
+                }
+                Console.WriteLine();
+
+            }
 
         }
 
