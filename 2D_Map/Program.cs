@@ -23,6 +23,8 @@ namespace _2D_Map
             {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
             {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         };
+
+        
         
         
 
@@ -34,8 +36,9 @@ namespace _2D_Map
         static void Main(string[] args)
         {
 
+            DisplayMap();
 
-            DisplayMap(2);
+
 
 
 
@@ -44,17 +47,33 @@ namespace _2D_Map
 
         static void DisplayMap()
         {
+            Console.Write("+");
+            for (int top = 0; top < map.GetLength(1); top++)
+            {
+                Console.Write("-");
+            }
+                Console.Write("+");
+                Console.WriteLine();
             for (int y = 0; y<= 11; y++)
             {
                  Console.Write("|");
                 for(int x = 0; x<= 29; x++)
                 {
+                    TileColour(y, x);
                     Console.Write(map[y,x]);
                 }
+
                  Console.Write("|");
                 Console.WriteLine();
 
             }
+            Console.Write("+");
+            for (int top = 0; top < map.GetLength(1); top++)
+            {
+                Console.Write("-");
+            }
+            Console.Write("+");
+            Console.WriteLine();
 
         }
 
@@ -70,8 +89,8 @@ namespace _2D_Map
                    {
                        for(int scaleX = 0; scaleX < scale; scaleX++)
                        {
-                         Console.Write(map[y, x]);
                          TileColour(y, x);
+                         Console.Write(map[y, x]);
                             
                        }
                    }
@@ -99,7 +118,6 @@ namespace _2D_Map
                 case '*':
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
                     break;
-
             }
         }
     }
