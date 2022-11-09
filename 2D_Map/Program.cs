@@ -24,6 +24,7 @@ namespace _2D_Map
             {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         };
         
+        
 
         // map legend:
         // ^ = mountain
@@ -33,8 +34,10 @@ namespace _2D_Map
         static void Main(string[] args)
         {
 
+
             DisplayMap(2);
-           
+
+
 
             Console.ReadKey(true);
         }
@@ -60,21 +63,44 @@ namespace _2D_Map
             for (int y = 0; y <= 11; y++)
             {
                 for(int scaleY = 0; scaleY < scale; scaleY++)
-                {
+                { 
+                   
                    Console.Write("|");
                    for (int x = 0; x <= 29; x++)
                    {
                        for(int scaleX = 0; scaleX < scale; scaleX++)
                        {
-
                          Console.Write(map[y, x]);
+                         TileColour(y, x);
                             
                        }
-                    }
+                   }
                         Console.Write("|");
                     Console.WriteLine();
                 }      
             } 
+        }
+        static void TileColour(int y, int x)
+        {
+            switch(map[y,x])
+            {
+                case '`':
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    break;
+
+                case '^':
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    break;
+
+                case '~':
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    break;
+
+                case '*':
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    break;
+
+            }
         }
     }
 }
