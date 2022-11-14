@@ -48,35 +48,35 @@ namespace _2D_Map
         static void DisplayMap()
         {
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.Write("<");
+            Console.Write("╔");
             for (int top = 0; top < map.GetLength(1); top++)
             {
-                Console.Write("-");
+                Console.Write("═");
             }
-                Console.Write(">");
+                Console.Write("╗");
                 Console.WriteLine();
 
             for (int y = 0; y<= 11; y++)
             {
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.Write("|");
+                Console.Write("║");
                 for(int x = 0; x<= 29; x++)
                 {
                     TileColour(y, x);
                     Console.Write(map[y,x]);
                 }
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.Write("|");
+                Console.Write("║");
                 Console.WriteLine();
 
             }
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.Write("<");
+            Console.Write("╚");
             for (int top = 0; top < map.GetLength(1); top++)
             {
-                Console.Write("-");
+                Console.Write("═");
             }
-            Console.Write(">");
+            Console.Write("╝");
             Console.WriteLine();
 
         }
@@ -84,13 +84,13 @@ namespace _2D_Map
         static void DisplayMap(int scale)
         {
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.Write("<");
+            Console.Write("╔");
             for (int top = 0; top < map.GetLength(1); top++)
                for (int scaleBT = 0; scaleBT < scale; scaleBT++)
                {
-                    Console.Write("-");
+                    Console.Write("═");
                }
-               Console.Write(">");
+               Console.Write("╗");
                Console.WriteLine();
 
 
@@ -99,7 +99,7 @@ namespace _2D_Map
                 for (int scaleY = 0; scaleY < scale; scaleY++)
                 {
                     Console.BackgroundColor = ConsoleColor.Black;
-                    Console.Write("|");
+                    Console.Write("║");
                    for (int x = 0; x <= 29; x++)
                    {
                        for(int scaleX = 0; scaleX < scale; scaleX++)
@@ -111,19 +111,19 @@ namespace _2D_Map
                        
                    }
                     Console.BackgroundColor = ConsoleColor.Black;
-                    Console.Write("|");
+                    Console.Write("║");
                     Console.WriteLine();
                 }
 
             }
             Console.BackgroundColor = ConsoleColor.Black;
-             Console.Write("<");
+             Console.Write("╚");
               for (int top = 0; top < map.GetLength(1); top++)
                for (int scaleBB = 0; scaleBB < scale; scaleBB++)
                {
-                   Console.Write("-");
+                   Console.Write("═");
                }
-                  Console.Write(">");
+                  Console.Write("╝");
                   Console.WriteLine();
             Console.WriteLine("Map Legend");
             Console.WriteLine("^ = mountain");
