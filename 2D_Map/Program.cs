@@ -47,6 +47,7 @@ namespace _2D_Map
 
         static void DisplayMap()
         {
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Write("<");
             for (int top = 0; top < map.GetLength(1); top++)
             {
@@ -57,17 +58,19 @@ namespace _2D_Map
 
             for (int y = 0; y<= 11; y++)
             {
-                 Console.Write("|");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Write("|");
                 for(int x = 0; x<= 29; x++)
                 {
                     TileColour(y, x);
                     Console.Write(map[y,x]);
                 }
-
-                 Console.Write("|");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Write("|");
                 Console.WriteLine();
 
             }
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Write("<");
             for (int top = 0; top < map.GetLength(1); top++)
             {
@@ -80,6 +83,7 @@ namespace _2D_Map
 
         static void DisplayMap(int scale)
         {
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Write("<");
             for (int top = 0; top < map.GetLength(1); top++)
                for (int scaleBT = 0; scaleBT < scale; scaleBT++)
@@ -93,24 +97,26 @@ namespace _2D_Map
             for (int y = 0; y <= 11; y++)
             {
                 for (int scaleY = 0; scaleY < scale; scaleY++)
-                { 
-                   
-                   Console.Write("|");
+                {
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.Write("|");
                    for (int x = 0; x <= 29; x++)
                    {
                        for(int scaleX = 0; scaleX < scale; scaleX++)
                        {
-                         Console.BackgroundColor = ConsoleColor.Black;
-                         TileColour(y, x);
+                         TileColour(y, x); 
                          Console.Write(map[y, x]);
                             
                        }
+                       
                    }
-                        Console.Write("|");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.Write("|");
                     Console.WriteLine();
                 }
 
             }
+            Console.BackgroundColor = ConsoleColor.Black;
              Console.Write("<");
               for (int top = 0; top < map.GetLength(1); top++)
                for (int scaleBB = 0; scaleBB < scale; scaleBB++)
@@ -130,7 +136,7 @@ namespace _2D_Map
         {
             switch(map[y,x])
             {
-
+                
                 case '`':
                     Console.BackgroundColor = ConsoleColor.Green;
                     break;
@@ -146,6 +152,7 @@ namespace _2D_Map
                 case '*':
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
                     break;
+
             }
         }
     }
