@@ -36,7 +36,7 @@ namespace _2D_Map
         static void Main(string[] args)
         {
 
-            DisplayMap();
+            DisplayMap(2);
 
 
 
@@ -79,9 +79,16 @@ namespace _2D_Map
 
         static void DisplayMap(int scale)
         {
+            Console.Write("+");
+            for (int top = 0; top < map.GetLength(1); top++)
+            {
+                Console.Write("-");
+            }
+            Console.Write("+");
+            Console.WriteLine();
             for (int y = 0; y <= 11; y++)
             {
-                for(int scaleY = 0; scaleY < scale; scaleY++)
+                for (int scaleY = 0; scaleY < scale; scaleY++)
                 { 
                    
                    Console.Write("|");
@@ -103,6 +110,7 @@ namespace _2D_Map
         {
             switch(map[y,x])
             {
+
                 case '`':
                     Console.BackgroundColor = ConsoleColor.Green;
                     break;
