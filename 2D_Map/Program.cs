@@ -47,13 +47,14 @@ namespace _2D_Map
 
         static void DisplayMap()
         {
-            Console.Write("+");
+            Console.Write("<");
             for (int top = 0; top < map.GetLength(1); top++)
             {
                 Console.Write("-");
             }
-                Console.Write("+");
+                Console.Write(">");
                 Console.WriteLine();
+
             for (int y = 0; y<= 11; y++)
             {
                  Console.Write("|");
@@ -67,25 +68,28 @@ namespace _2D_Map
                 Console.WriteLine();
 
             }
-            Console.Write("+");
+            Console.Write("<");
             for (int top = 0; top < map.GetLength(1); top++)
             {
                 Console.Write("-");
             }
-            Console.Write("+");
+            Console.Write(">");
             Console.WriteLine();
 
         }
 
         static void DisplayMap(int scale)
         {
-            Console.Write("+");
+            Console.Write("<");
             for (int top = 0; top < map.GetLength(1); top++)
-            {
-                Console.Write("-");
-            }
-            Console.Write("+");
-            Console.WriteLine();
+               for (int scaleBT = 0; scaleBT < scale; scaleBT++)
+               {
+                    Console.Write("-");
+               }
+               Console.Write(">");
+               Console.WriteLine();
+
+
             for (int y = 0; y <= 11; y++)
             {
                 for (int scaleY = 0; scaleY < scale; scaleY++)
@@ -96,6 +100,7 @@ namespace _2D_Map
                    {
                        for(int scaleX = 0; scaleX < scale; scaleX++)
                        {
+                         Console.BackgroundColor = ConsoleColor.Black;
                          TileColour(y, x);
                          Console.Write(map[y, x]);
                             
@@ -103,8 +108,23 @@ namespace _2D_Map
                    }
                         Console.Write("|");
                     Console.WriteLine();
-                }      
-            } 
+                }
+
+            }
+             Console.Write("<");
+              for (int top = 0; top < map.GetLength(1); top++)
+               for (int scaleBB = 0; scaleBB < scale; scaleBB++)
+               {
+                   Console.Write("-");
+               }
+                  Console.Write(">");
+                  Console.WriteLine();
+            Console.WriteLine("Map Legend");
+            Console.WriteLine("^ = mountain");
+            Console.WriteLine("` = grass");
+            Console.WriteLine("~ = water");
+            Console.WriteLine("* = trees");
+
         }
         static void TileColour(int y, int x)
         {
