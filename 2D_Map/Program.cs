@@ -126,11 +126,14 @@ namespace _2D_Map
                }
                   Console.Write("╝");
                   Console.WriteLine();
-            Console.WriteLine("Map Legend");
+            Console.WriteLine("------------");
+            Console.WriteLine("Map Legend: ");
+            Console.WriteLine("------------");
             Console.WriteLine("^ = mountain");
             Console.WriteLine("` = grass");
             Console.WriteLine("~ = water");
             Console.WriteLine("* = trees");
+            Console.WriteLine("------------");
 
         }
         static void TileColour(int y, int x)
