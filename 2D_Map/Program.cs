@@ -41,7 +41,11 @@ namespace _2D_Map
         static void Main(string[] args)
         {
 
+            DisplayMap();
+            Console.WriteLine();
             DisplayMap(2);
+            Console.WriteLine();
+            DisplayMap(3);
 
 
 
