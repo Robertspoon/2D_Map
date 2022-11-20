@@ -43,8 +43,12 @@ namespace _2D_Map
 
             DisplayMap();
             Console.WriteLine();
+            Console.ReadKey(true);
+            Console.Clear();
             DisplayMap(2);
             Console.WriteLine();
+            Console.ReadKey(true);
+            Console.Clear();
             DisplayMap(3);
 
 
